@@ -69,29 +69,25 @@
                                     <constraint firstItem="SQa-L3-FPF" firstAttribute="width" secondItem="xaJ-Tn-4hN" secondAttribute="width" multiplier="11:16" id="j8D-Ms-rD4"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmU-SZ-yxX">
-                                <rect key="frame" x="0.0" y="270" width="375" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ObE-Mh-ebJ">
-                                <rect key="frame" x="97" y="301" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="saveData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ibs-Ni-mkz"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqH-9q-GlW">
-                                <rect key="frame" x="327" y="299" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Find"/>
-                                <connections>
-                                    <action selector="findContact:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bel-W4-Wxn"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="r2J-hm-dUn">
+                                <rect key="frame" x="16" y="196" width="343" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ObE-Mh-ebJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="161.5" height="30"/>
+                                        <state key="normal" title="Save"/>
+                                        <connections>
+                                            <action selector="saveData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ibs-Ni-mkz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqH-9q-GlW">
+                                        <rect key="frame" x="181.5" y="0.0" width="161.5" height="30"/>
+                                        <state key="normal" title="Find"/>
+                                        <connections>
+                                            <action selector="findContact:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bel-W4-Wxn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dIQ-qF-1AI">
                                 <rect key="frame" x="16" y="142" width="343" height="30"/>
                                 <subviews>
@@ -115,18 +111,30 @@
                                     <constraint firstItem="oIZ-Ee-h92" firstAttribute="bottom" secondItem="dIQ-qF-1AI" secondAttribute="bottom" id="rG9-pZ-KP9"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmU-SZ-yxX">
+                                <rect key="frame" x="0.0" y="245" width="375" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="bmU-SZ-yxX" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="2IR-vE-mHo"/>
+                            <constraint firstItem="bmU-SZ-yxX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="8gV-u7-vtL"/>
+                            <constraint firstItem="r2J-hm-dUn" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="90k-fL-THq"/>
                             <constraint firstItem="xaJ-Tn-4hN" firstAttribute="top" secondItem="azp-Cz-IOm" secondAttribute="bottom" constant="20" id="A8V-b2-wuY"/>
                             <constraint firstItem="xaJ-Tn-4hN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="B23-Fw-hF9"/>
                             <constraint firstItem="dIQ-qF-1AI" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="BfX-L9-7O8"/>
+                            <constraint firstItem="bmU-SZ-yxX" firstAttribute="top" secondItem="r2J-hm-dUn" secondAttribute="bottom" constant="20" id="CY0-y9-bvr"/>
                             <constraint firstItem="azp-Cz-IOm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="QaK-6g-OXh"/>
                             <constraint firstItem="dIQ-qF-1AI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="aVX-XO-Jho"/>
                             <constraint firstItem="azp-Cz-IOm" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="hg7-gk-9ca"/>
                             <constraint firstItem="xaJ-Tn-4hN" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="j26-L6-eTj"/>
                             <constraint firstItem="dIQ-qF-1AI" firstAttribute="top" secondItem="xaJ-Tn-4hN" secondAttribute="bottom" constant="20" id="kGn-8J-cgZ"/>
+                            <constraint firstItem="r2J-hm-dUn" firstAttribute="top" secondItem="dIQ-qF-1AI" secondAttribute="bottom" constant="20" id="wr2-E6-UxU"/>
                             <constraint firstItem="azp-Cz-IOm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="40" id="xfp-7c-3tl"/>
+                            <constraint firstItem="r2J-hm-dUn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="zhB-Ke-QCX"/>
                         </constraints>
                     </view>
                     <connections>
