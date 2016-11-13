@@ -10,10 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var name: UITextField!
-    @IBOutlet weak var address: UITextField!
-    @IBOutlet weak var phone: UITextField!
-    @IBOutlet weak var status: UILabel!
+    @IBOutlet weak var textFieldName: UITextField!
+    @IBOutlet weak var textFieldAddress: UITextField!
+    @IBOutlet weak var textFieldPhone: UITextField!
+    @IBOutlet weak var labelStatus: UILabel!
+    @IBOutlet weak var labelName: UILabel!
+    @IBOutlet weak var labelAddress: UILabel!
+    @IBOutlet weak var labelPhone: UILabel!
     
     // Will save path to database file
     var databasePath = NSString()
@@ -74,16 +77,16 @@ class ViewController: UIViewController {
             if contactDB.open() {
                 
                 // Get data from the form fields on the view (user interface)
-                guard let nameValue : String = name.text else {
-                    status.text = "Hey, we need a name here."
+                guard let nameValue : String = textFieldName.text else {
+                    labelStatus.text = "Hey, we need a name here."
                     return
                 }
-                guard let addressValue : String = address.text else {
-                    status.text = "Hey, we need an address!"
+                guard let addressValue : String = textFieldAddress.text else {
+                    labelStatus.text = "Hey, we need an address!"
                     return
                 }
-                guard let phoneValue : String = phone.text else {
-                    status.text = "Please provide a phone number."
+                guard let phoneValue : String = textFieldPhone.text else {
+                    labelStatus.text = "Please provide a phone number."
                     return
                 }
                 
@@ -95,14 +98,14 @@ class ViewController: UIViewController {
                 
                 // See what happened and react accordingly
                 if !result {
-                    status.text = "Failed to add contact"
+                    labelStatus.text = "Failed to add contact"
                 } else {
-                    status.text = "Contact added"
+                    labelStatus.text = "Contact added"
                     
                     // Clear out the form fields
-                    name.text = ""
-                    address.text = ""
-                    phone.text = ""
+                    textFieldName.text = ""
+                    textFieldAddress.text = ""
+                    textFieldPhone.text = ""
                 }
                 
             }
@@ -126,8 +129,8 @@ class ViewController: UIViewController {
             if contactDB.open() {
                 
                 // Get form field value
-                guard let nameValue : String = name.text else {
-                    status.text = "Please provide a name."
+                guard let nameValue : String = textFieldName.text else {
+                    labelStatus.text = "Please provide a name."
                     return
                 }
                 
@@ -154,16 +157,16 @@ class ViewController: UIViewController {
                         }
                         
                         // Load the results in the view (user interface)
-                        address.text = addressValue
-                        phone.text = phoneValue
-                        status.text = "Record found!"
+                        textFieldAddress.text = addressValue
+                        textFieldPhone.text = phoneValue
+                        labelStatus.text = "Record found!"
                         
                     } else {
                         
                         // Nothing was found for this query
-                        status.text = "Record not found"
-                        address.text = ""
-                        phone.text = ""
+                        labelStatus.text = "Record not found"
+                        textFieldAddress.text = ""
+                        textFieldPhone.text = ""
                     }
                     
                     // Close the database
