@@ -135,7 +135,7 @@ class ViewController: UIViewController {
                 }
                 
                 // Create SQL statement to find data
-                let SQL = "SELECT address, phone FROM CONTACTS WHERE name = '\(nameValue)'"
+                let SQL = "SELECT address, phone FROM CONTACTS WHERE name LIKE '%\(nameValue)%'"
                 
                 // Run query
                 do {
