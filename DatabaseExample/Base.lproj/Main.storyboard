@@ -36,6 +36,9 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="findOnPartialName:" destination="BYZ-38-t0r" eventType="editingChanged" id="Y4m-ik-e3D"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <constraints>

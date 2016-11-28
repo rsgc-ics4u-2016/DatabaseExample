@@ -189,5 +189,10 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func findOnPartialName(_ sender: Any) {
+        
+        findContact(sender)
+        
+    }
 }
 
