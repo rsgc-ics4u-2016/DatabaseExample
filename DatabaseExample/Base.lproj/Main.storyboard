@@ -41,6 +41,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6p3-45-5h4" userLabel="nextResult">
                                         <rect key="frame" x="171.5" y="0.0" width="171.5" height="30"/>
                                         <state key="normal" title="&gt;"/>
+                                        <connections>
+                                            <action selector="showNextResult:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5oR-HD-qGB"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -157,6 +160,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="buttonNext" destination="6p3-45-5h4" id="Tsz-I0-tDE"/>
+                        <outlet property="buttonPrior" destination="Wgt-AL-24u" id="FOE-Am-BhL"/>
                         <outlet property="labelAddress" destination="Y6w-8r-BMM" id="0QB-9F-KYF"/>
                         <outlet property="labelName" destination="EWg-HQ-tHa" id="V0i-yg-fd8"/>
                         <outlet property="labelPhone" destination="IU0-R4-8Ul" id="VnK-jH-327"/>
