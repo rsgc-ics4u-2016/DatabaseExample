@@ -23,13 +23,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="🔍 by name, address, or phone number." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ADw-69-zyH" userLabel="textFieldSearch">
-                                <rect key="frame" x="16" y="18" width="343" height="30"/>
+                                <rect key="frame" x="16" y="47" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="findOnPartialSearchString:" destination="BYZ-38-t0r" eventType="editingChanged" id="5EP-jr-Uvk"/>
+                                </connections>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="azp-Cz-IOm" userLabel="nameStackView">
-                                <rect key="frame" x="16" y="67" width="343" height="30"/>
+                                <rect key="frame" x="16" y="96" width="343" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWg-HQ-tHa" userLabel="labelName">
                                         <rect key="frame" x="0.0" y="0.0" width="63" height="30"/>
@@ -42,9 +45,6 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="findOnPartialName:" destination="BYZ-38-t0r" eventType="editingChanged" id="Y4m-ik-e3D"/>
-                                        </connections>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -54,7 +54,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xaJ-Tn-4hN" userLabel="addressStackView">
-                                <rect key="frame" x="16" y="119" width="343" height="30"/>
+                                <rect key="frame" x="16" y="148" width="343" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6w-8r-BMM" userLabel="labelAddress">
                                         <rect key="frame" x="0.0" y="0.0" width="63" height="30"/>
@@ -76,7 +76,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="r2J-hm-dUn" userLabel="buttonStackView">
-                                <rect key="frame" x="16" y="223" width="343" height="30"/>
+                                <rect key="frame" x="16" y="252" width="343" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ObE-Mh-ebJ">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
@@ -88,7 +88,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dIQ-qF-1AI" userLabel="phoneStackView">
-                                <rect key="frame" x="16" y="169" width="343" height="30"/>
+                                <rect key="frame" x="16" y="198" width="343" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IU0-R4-8Ul" userLabel="labelPhone">
                                         <rect key="frame" x="0.0" y="0.0" width="63" height="30"/>
@@ -110,7 +110,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmU-SZ-yxX" userLabel="labelStatus">
-                                <rect key="frame" x="0.0" y="272" width="375" height="21"/>
+                                <rect key="frame" x="0.0" y="301" width="375" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -130,7 +130,7 @@
                             <constraint firstItem="IU0-R4-8Ul" firstAttribute="width" secondItem="Y6w-8r-BMM" secondAttribute="width" id="Irw-rN-xb5"/>
                             <constraint firstItem="azp-Cz-IOm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="QaK-6g-OXh"/>
                             <constraint firstItem="dIQ-qF-1AI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="aVX-XO-Jho"/>
-                            <constraint firstItem="ADw-69-zyH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="20" id="eg5-me-p5b"/>
+                            <constraint firstItem="ADw-69-zyH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="40" id="eg5-me-p5b"/>
                             <constraint firstItem="azp-Cz-IOm" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="hg7-gk-9ca"/>
                             <constraint firstItem="xaJ-Tn-4hN" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="j26-L6-eTj"/>
                             <constraint firstItem="dIQ-qF-1AI" firstAttribute="top" secondItem="xaJ-Tn-4hN" secondAttribute="bottom" constant="20" id="kGn-8J-cgZ"/>
@@ -148,6 +148,7 @@
                         <outlet property="textFieldAddress" destination="SQa-L3-FPF" id="5oc-gG-set"/>
                         <outlet property="textFieldName" destination="4kF-3u-6Pu" id="Oac-Ws-fY4"/>
                         <outlet property="textFieldPhone" destination="oIZ-Ee-h92" id="esg-ni-ucR"/>
+                        <outlet property="textFieldSearch" destination="ADw-69-zyH" id="Cve-uk-xJM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

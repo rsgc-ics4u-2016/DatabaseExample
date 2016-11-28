@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var textFieldSearch: UITextField!
     @IBOutlet weak var textFieldName: UITextField!
     @IBOutlet weak var textFieldAddress: UITextField!
     @IBOutlet weak var textFieldPhone: UITextField!
@@ -103,9 +104,7 @@ class ViewController: UIViewController {
                     labelStatus.text = "Contact added"
                     
                     // Clear out the form fields
-                    textFieldName.text = ""
-                    textFieldAddress.text = ""
-                    textFieldPhone.text = ""
+                    resetFields()
                 }
                 
             }
@@ -129,13 +128,13 @@ class ViewController: UIViewController {
             if contactDB.open() {
                 
                 // Get form field value
-                guard let nameValue : String = textFieldName.text else {
-                    labelStatus.text = "Please provide a name."
+                guard let searchString : String = textFieldSearch.text else {
+                    labelStatus.text = "Please provide search data."
                     return
                 }
                 
                 // Create SQL statement to find data
-                let SQL = "SELECT name, address, phone FROM CONTACTS WHERE name LIKE '%\(nameValue)%'"
+                let SQL = "SELECT name, address, phone FROM CONTACTS WHERE name LIKE '%\(searchString)%' OR address LIKE '%\(searchString)%' OR phone LIKE '%\(searchString)%'"
                 
                 // Run query
                 do {
@@ -170,8 +169,7 @@ class ViewController: UIViewController {
                         
                         // Nothing was found for this query
                         labelStatus.text = "Record not found"
-                        textFieldAddress.text = ""
-                        textFieldPhone.text = ""
+                        resetFields()
                     }
                     
                     // Close the database
@@ -194,10 +192,24 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func findOnPartialName(_ sender: Any) {
+    @IBAction func findOnPartialSearchString(_ sender: Any) {
         
-        findContact(sender)
+        // Invoke the findContact method.
+        if let searchString = textFieldSearch.text {
+            if searchString == "" {
+                resetFields()
+                labelStatus.text = ""
+            } else {
+                findContact(sender)
+            }
+        }        
         
+    }
+    
+    func resetFields() {
+        textFieldName.text = ""
+        textFieldAddress.text = ""
+        textFieldPhone.text = ""
     }
 }
 
