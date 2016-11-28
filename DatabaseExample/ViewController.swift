@@ -135,7 +135,7 @@ class ViewController: UIViewController {
                 }
                 
                 // Create SQL statement to find data
-                let SQL = "SELECT address, phone FROM CONTACTS WHERE name LIKE '%\(nameValue)%'"
+                let SQL = "SELECT name, address, phone FROM CONTACTS WHERE name LIKE '%\(nameValue)%'"
                 
                 // Run query
                 do {
@@ -147,6 +147,10 @@ class ViewController: UIViewController {
                     // Now, open the database and select data using value given for name in the view (user interface)
                     if results?.next() == true {    // Something was found for this query
                         
+                        guard let nameValue : String = results?.string(forColumn: "name") else {
+                            print("Nil value returned from query for the address, that's odd.")
+                            return
+                        }
                         guard let addressValue : String = results?.string(forColumn: "address") else {
                             print("Nil value returned from query for the address, that's odd.")
                             return
@@ -157,6 +161,7 @@ class ViewController: UIViewController {
                         }
                         
                         // Load the results in the view (user interface)
+                        textFieldName.text = nameValue
                         textFieldAddress.text = addressValue
                         textFieldPhone.text = phoneValue
                         labelStatus.text = "Record found!"
