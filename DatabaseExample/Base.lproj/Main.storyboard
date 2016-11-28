@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="🔍 by name, address, or phone number." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ADw-69-zyH" userLabel="textFieldSearch">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="🔍 by name, address, or phone number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ADw-69-zyH" userLabel="textFieldSearch">
                                 <rect key="frame" x="16" y="47" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -31,8 +31,21 @@
                                     <action selector="findOnPartialSearchString:" destination="BYZ-38-t0r" eventType="editingChanged" id="5EP-jr-Uvk"/>
                                 </connections>
                             </textField>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="azp-Cz-IOm" userLabel="nameStackView">
-                                <rect key="frame" x="16" y="96" width="343" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="wl7-2x-v7p" userLabel="stackViewResultNavigation">
+                                <rect key="frame" x="16" y="97" width="343" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wgt-AL-24u" userLabel="priorResult">
+                                        <rect key="frame" x="0.0" y="0.0" width="171.5" height="30"/>
+                                        <state key="normal" title="&lt;"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6p3-45-5h4" userLabel="nextResult">
+                                        <rect key="frame" x="171.5" y="0.0" width="171.5" height="30"/>
+                                        <state key="normal" title="&gt;"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="azp-Cz-IOm" userLabel="stackViewName">
+                                <rect key="frame" x="16" y="145" width="343" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWg-HQ-tHa" userLabel="labelName">
                                         <rect key="frame" x="0.0" y="0.0" width="63" height="30"/>
@@ -53,8 +66,8 @@
                                     <constraint firstItem="4kF-3u-6Pu" firstAttribute="trailing" secondItem="azp-Cz-IOm" secondAttribute="trailing" id="eFR-I7-nBa"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xaJ-Tn-4hN" userLabel="addressStackView">
-                                <rect key="frame" x="16" y="148" width="343" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xaJ-Tn-4hN" userLabel="stackViewAddress">
+                                <rect key="frame" x="16" y="197" width="343" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6w-8r-BMM" userLabel="labelAddress">
                                         <rect key="frame" x="0.0" y="0.0" width="63" height="30"/>
@@ -75,20 +88,8 @@
                                     <constraint firstItem="SQa-L3-FPF" firstAttribute="trailing" secondItem="xaJ-Tn-4hN" secondAttribute="trailing" id="axy-cf-waT"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="r2J-hm-dUn" userLabel="buttonStackView">
-                                <rect key="frame" x="16" y="252" width="343" height="30"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ObE-Mh-ebJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
-                                        <state key="normal" title="Save"/>
-                                        <connections>
-                                            <action selector="saveData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ibs-Ni-mkz"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dIQ-qF-1AI" userLabel="phoneStackView">
-                                <rect key="frame" x="16" y="198" width="343" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dIQ-qF-1AI" userLabel="stackViewPhone">
+                                <rect key="frame" x="16" y="247" width="343" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IU0-R4-8Ul" userLabel="labelPhone">
                                         <rect key="frame" x="0.0" y="0.0" width="63" height="30"/>
@@ -109,8 +110,20 @@
                                     <constraint firstItem="oIZ-Ee-h92" firstAttribute="bottom" secondItem="dIQ-qF-1AI" secondAttribute="bottom" id="rG9-pZ-KP9"/>
                                 </constraints>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="r2J-hm-dUn" userLabel="stackViewButton">
+                                <rect key="frame" x="16" y="301" width="343" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ObE-Mh-ebJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                        <state key="normal" title="Save"/>
+                                        <connections>
+                                            <action selector="saveData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ibs-Ni-mkz"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmU-SZ-yxX" userLabel="labelStatus">
-                                <rect key="frame" x="0.0" y="301" width="375" height="21"/>
+                                <rect key="frame" x="0.0" y="350" width="375" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -118,16 +131,18 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="azp-Cz-IOm" firstAttribute="top" secondItem="ADw-69-zyH" secondAttribute="bottom" constant="20" id="0xe-40-RFf"/>
                             <constraint firstItem="bmU-SZ-yxX" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="2IR-vE-mHo"/>
                             <constraint firstItem="ADw-69-zyH" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="5Ur-wC-WQY"/>
+                            <constraint firstItem="wl7-2x-v7p" firstAttribute="top" secondItem="ADw-69-zyH" secondAttribute="bottom" constant="20" id="7Kd-Ae-Vvo"/>
                             <constraint firstItem="bmU-SZ-yxX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="8gV-u7-vtL"/>
                             <constraint firstItem="r2J-hm-dUn" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="90k-fL-THq"/>
                             <constraint firstItem="xaJ-Tn-4hN" firstAttribute="top" secondItem="azp-Cz-IOm" secondAttribute="bottom" constant="20" id="A8V-b2-wuY"/>
                             <constraint firstItem="xaJ-Tn-4hN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="B23-Fw-hF9"/>
                             <constraint firstItem="dIQ-qF-1AI" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="BfX-L9-7O8"/>
                             <constraint firstItem="bmU-SZ-yxX" firstAttribute="top" secondItem="r2J-hm-dUn" secondAttribute="bottom" constant="20" id="CY0-y9-bvr"/>
+                            <constraint firstItem="azp-Cz-IOm" firstAttribute="top" secondItem="wl7-2x-v7p" secondAttribute="bottom" constant="20" id="Er8-Fy-boW"/>
                             <constraint firstItem="IU0-R4-8Ul" firstAttribute="width" secondItem="Y6w-8r-BMM" secondAttribute="width" id="Irw-rN-xb5"/>
+                            <constraint firstItem="wl7-2x-v7p" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Nz5-Lg-smb"/>
                             <constraint firstItem="azp-Cz-IOm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="QaK-6g-OXh"/>
                             <constraint firstItem="dIQ-qF-1AI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="aVX-XO-Jho"/>
                             <constraint firstItem="ADw-69-zyH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="40" id="eg5-me-p5b"/>
@@ -137,6 +152,7 @@
                             <constraint firstItem="ADw-69-zyH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="pT0-pl-sZt"/>
                             <constraint firstItem="r2J-hm-dUn" firstAttribute="top" secondItem="dIQ-qF-1AI" secondAttribute="bottom" constant="20" id="wr2-E6-UxU"/>
                             <constraint firstItem="EWg-HQ-tHa" firstAttribute="width" secondItem="Y6w-8r-BMM" secondAttribute="width" id="x5U-Qz-zIM"/>
+                            <constraint firstItem="wl7-2x-v7p" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="xKF-oF-mqr"/>
                             <constraint firstItem="r2J-hm-dUn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="zhB-Ke-QCX"/>
                         </constraints>
                     </view>
